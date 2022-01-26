@@ -25,10 +25,7 @@ const RegisterUser = () => {
         }
         setUserArr([...getUserArr, user])
 
-        console.log(user)
-        console.log(getUserArr)
         nav("/login")
-        setUser(user.username)
     }
 
     return (

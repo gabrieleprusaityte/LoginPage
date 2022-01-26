@@ -8,7 +8,7 @@ const CreatePost = () => {
     const title = useRef()
     const articleText = useRef()
 
-    const {getPostArr, setPostArr, getError} = useContext(mainContext)
+    const {getPostArr, setPostArr, setUser} = useContext(mainContext)
 
     const nav = useNavigate()
 
@@ -18,6 +18,7 @@ const CreatePost = () => {
             articleText: articleText.current.value
         }
         setPostArr([...getPostArr, post])
+
         nav("/main")
 
     }
@@ -27,7 +28,7 @@ const CreatePost = () => {
             <div className="container">
                 <input ref={title} className="input" type="text" placeholder="Title"/>
                 <input ref={articleText} className="input" type="text" placeholder="Article text"/>
-                <h3>{getError}</h3>
+
 
                 <button onClick={createPost} className="btn">Create Post</button>
             </div>

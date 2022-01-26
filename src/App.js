@@ -12,7 +12,7 @@ import Toolbar from "./components/Toolbar";
 function App() {
 
     const [getPage, setPage] = useState("")
-    const [getUser, setUser] = useState("")
+    const [getUser, setUser] = useState("Jonas")
     const [getError, setError] = useState(null)
     const [getUserArr, setUserArr] = useState([])
     const [getPostArr, setPostArr] = useState([])
