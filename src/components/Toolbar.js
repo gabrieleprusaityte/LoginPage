@@ -30,6 +30,11 @@ const Toolbar = () => {
                     <h1>MAIN PAGE</h1>
                 </Link>
                 }
+                {getPage !== "/login" && getPage !== "/register" && getPage !== "/" && getPage !== "/createPost" &&
+                <Link to="/">
+                    <h1>LOGOUT</h1>
+                </Link>
+                }
             </div>
         </div>
     );
