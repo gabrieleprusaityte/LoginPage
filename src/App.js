@@ -12,15 +12,22 @@ import Toolbar from "./components/Toolbar";
 function App() {
 
     const [getPage, setPage] = useState("")
-    const [getUser, setUser] = useState("Jonas")
     const [getError, setError] = useState(null)
     const [getUserArr, setUserArr] = useState([])
     const [getPostArr, setPostArr] = useState([])
+    const [getUser, setUser] = useState("")
+    const [getLikes, setLikes] = useState(0)
+    const [getButton, setButton] = useState(0)
+    const [getInput, setInput] = useState(0)
+    const [getComment, setComment] = useState("")
+    const [getSend, setSend] = useState(0)
+    const [getCommentArr, setCommentArr] = useState([])
+    const [getCommentBox, setCommentBox] = useState(0)
 
   return (
     <div className="App">
 
-      <mainContext.Provider value={{getPage, setPage, getUser, setUser, getError, setError, getUserArr, setUserArr, getPostArr, setPostArr}}>
+      <mainContext.Provider value={{getPage, setPage, getError, setError, getUserArr, setUserArr, getPostArr, setPostArr, getUser, setUser, getLikes, setLikes, getButton, setButton, getInput, setInput, getComment, setComment, getCommentArr, setCommentArr, getCommentBox, setCommentBox, getSend, setSend}}>
 
         <BrowserRouter>
             <Toolbar />

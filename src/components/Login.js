@@ -5,25 +5,28 @@ import {useNavigate} from "react-router-dom";
 
 const Login = () => {
 
-    const {getError, setError, getUserArr, setUser} = useContext(mainContext)
+    const {getError, getUserArr, setUser} = useContext(mainContext)
 
     const username = useRef()
     const password = useRef()
 
     const nav = useNavigate()
 
-    function login() {
+    function loginIn(x) {
         const login = {
             username: username.current.value,
             password: password.current.value
         }
+        console.log(x)
+        console.log(login)
 
         for (const index in getUserArr) {
-            if (getUserArr[index].username !== login.username && getUserArr[index].password !== login.password) return setError("You are not registered")
+            if (getUserArr[index].username === login.username && getUserArr[index].password === login.password) {
+
+                nav("/createPost")
+            }
         }
-        setError(null)
-        setUser(login.username)
-        nav("/createPost")
+
     }
 
     return (
@@ -33,7 +36,7 @@ const Login = () => {
                 <input className="input" ref={password} type="text" placeholder="password"/>
                 <h3>{getError}</h3>
 
-                <button onClick={login} className="btn">Login</button>
+                <button onClick={loginIn} className="btn">Login</button>
             </div>
         </div>
     );

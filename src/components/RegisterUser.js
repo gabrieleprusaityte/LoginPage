@@ -11,20 +11,22 @@ const RegisterUser = () => {
 
 
 
-    const {getUserArr, setUserArr, getError, setError, getUser, setUser} = useContext(mainContext)
+    const {getUserArr, setUserArr, getError, setError, setUser} = useContext(mainContext)
+
 
     const nav = useNavigate()
 
     function createUser() {
         if (password1.current.value !== password2.current.value) return setError("password1 and password2 does not match")
         setError(null)
-
         const user = {
             username: username.current.value,
             password: password1.current.value
         }
         setUserArr([...getUserArr, user])
-
+        console.log(user)
+        console.log(getUserArr)
+        setUser(user.username)
         nav("/login")
     }
 

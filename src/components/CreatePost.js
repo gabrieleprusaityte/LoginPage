@@ -8,14 +8,16 @@ const CreatePost = () => {
     const title = useRef()
     const articleText = useRef()
 
-    const {getPostArr, setPostArr, setUser} = useContext(mainContext)
+    const {getPostArr, setPostArr, getUser, getLikes, setLikes} = useContext(mainContext)
 
     const nav = useNavigate()
 
     function createPost() {
         const post = {
             title: title.current.value,
-            articleText: articleText.current.value
+            articleText: articleText.current.value,
+            username: getUser,
+            likes: getLikes
         }
         setPostArr([...getPostArr, post])
 

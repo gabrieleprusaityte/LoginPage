@@ -1,24 +1,28 @@
-import React, {useContext, useEffect} from 'react';
+import React, {useContext, useEffect, useRef} from 'react';
 import mainContext from "../context/mainContext";
 import "./Style.css"
+import SingleArticle from "../components/SingleArticle";
+import Likes from "../components/Likes";
+import Comments from "../components/Comments";
 
 const MainPage = () => {
 
-    const {setPage, getPostArr, getUser} = useContext(mainContext)
+    const {setPage, getPostArr} = useContext(mainContext)
 
     useEffect(() => {
         setPage("/main")
     }, [])
 
 
+
     return (
         <div>
             <h1>MAIN PAGE</h1>
-            {getPostArr.map((x, i) => <div className="card" key={i}>
-                <h1>{x.title}</h1>
-                <h3>{x.articleText}</h3>
-                <h3>{getUser}</h3>
-            </div>)}
+            <div className="flex">
+                {getPostArr.map((x, i) => <SingleArticle post={x} key={i}/>)}
+
+            </div>
+
         </div>
     );
 };
