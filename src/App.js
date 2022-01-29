@@ -16,7 +16,6 @@ function App() {
     const [getUserArr, setUserArr] = useState([])
     const [getPostArr, setPostArr] = useState([])
     const [getUser, setUser] = useState("")
-    const [getLikes, setLikes] = useState(0)
     const [getButton, setButton] = useState(0)
     const [getInput, setInput] = useState(0)
     const [getComment, setComment] = useState("")
@@ -27,17 +26,17 @@ function App() {
   return (
     <div className="App">
 
-      <mainContext.Provider value={{getPage, setPage, getError, setError, getUserArr, setUserArr, getPostArr, setPostArr, getUser, setUser, getLikes, setLikes, getButton, setButton, getInput, setInput, getComment, setComment, getCommentArr, setCommentArr, getCommentBox, setCommentBox, getSend, setSend}}>
+      <mainContext.Provider value={{getPage, setPage, getError, setError, getUserArr, setUserArr, getPostArr, setPostArr, getUser, setUser, getButton, setButton, getInput, setInput, getComment, setComment, getCommentArr, setCommentArr, getCommentBox, setCommentBox, getSend, setSend}}>
 
         <BrowserRouter>
-            <Toolbar />
+            <Toolbar user={getUser}/>
           <Routes>
 
             <Route path="/" element={<HomePage />}/>
               <Route path="/register" element={<RegistrationPage />}/>
               <Route path="/login" element={<LoginPage />}/>
               <Route path="/createPost" element={<CreatePostPage />}/>
-              <Route path="/main" element={<MainPage />}/>
+              <Route path="/main" element={<MainPage user={getUser} />}/>
 
           </Routes>
 

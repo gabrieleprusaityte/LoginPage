@@ -2,7 +2,7 @@ import React, {useContext, useEffect} from 'react';
 import mainContext from "../context/mainContext";
 import Login from "../components/Login";
 
-const LoginPage = () => {
+const LoginPage = ({userLogin}) => {
 
 
     const {setPage} = useContext(mainContext)
@@ -14,7 +14,7 @@ const LoginPage = () => {
     return (
         <div>
             <h1>LOGIN PAGE</h1>
-            <Login />
+            <Login userLogin={userLogin} />
         </div>
     );
 };

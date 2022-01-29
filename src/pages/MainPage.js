@@ -5,7 +5,7 @@ import SingleArticle from "../components/SingleArticle";
 import Likes from "../components/Likes";
 import Comments from "../components/Comments";
 
-const MainPage = () => {
+const MainPage = ({user}) => {
 
     const {setPage, getPostArr} = useContext(mainContext)
 
@@ -18,11 +18,9 @@ const MainPage = () => {
     return (
         <div>
             <h1>MAIN PAGE</h1>
-            <div className="flex">
-                {getPostArr.map((x, i) => <SingleArticle post={x} key={i}/>)}
-
+            <div className="flex flex-wrap j-center">
+                {getPostArr.map((x, i) => <SingleArticle post={x} key={i} user={user} index={i} />)}
             </div>
-
         </div>
     );
 };

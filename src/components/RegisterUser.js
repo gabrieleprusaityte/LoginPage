@@ -24,9 +24,6 @@ const RegisterUser = () => {
             password: password1.current.value
         }
         setUserArr([...getUserArr, user])
-        console.log(user)
-        console.log(getUserArr)
-        setUser(user.username)
         nav("/login")
     }
 

@@ -11,3 +11,9 @@
 .column {
     flex-direction: column;
 }
+.flex-wrap {
+    flex-wrap: wrap;
+}
+.j-center {
+    justify-content: center;
+}
